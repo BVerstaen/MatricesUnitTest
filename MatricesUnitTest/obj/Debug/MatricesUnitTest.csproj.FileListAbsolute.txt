@@ -1,0 +1,9 @@
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\bin\Debug\MatricesUnitTest.dll
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\bin\Debug\MatricesUnitTest.pdb
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\bin\Debug\nunit.framework.dll
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\bin\Debug\nunit.framework.xml
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\obj\Debug\MatricesUnitTest.csproj.AssemblyReference.cache
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\obj\Debug\MatricesUnitTest.csproj.CoreCompileInputs.cache
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\obj\Debug\Matrices.9DEC06E0.Up2Date
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\obj\Debug\MatricesUnitTest.dll
+D:\Github\A4\Math3D\MatricesUnitTest\MatricesUnitTest\obj\Debug\MatricesUnitTest.pdb
