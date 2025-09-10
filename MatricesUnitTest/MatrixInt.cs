@@ -194,6 +194,26 @@ namespace Maths_Matrices.Tests
         public static MatrixInt operator *(MatrixInt m1, MatrixInt m2) => MatrixInt.Multiply(m1, m2);
         #endregion
 
+        #region Transpose
+
+        public MatrixInt Transpose()
+        {
+            MatrixInt transposedMatrice = new MatrixInt(NbColumns, NbLines);
+
+            for (int i = 0; i < NbLines; i++)
+            {
+                for (int j = 0; j < NbColumns; j++)
+                {
+                    transposedMatrice[j,i] = matrice[i, j];
+                }
+            }
+            
+            return transposedMatrice;
+        }
+        
+        public static MatrixInt Transpose(MatrixInt m1) => m1.Transpose();
+        
+        #endregion
 
 
     }
