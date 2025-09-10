@@ -11,4 +11,9 @@ namespace Maths_Matrices.Tests
     {
         public MatrixSubstractException(string message) : base(message){}
     }
+
+    public class MatrixMultiplyException : Exception
+    {
+        public MatrixMultiplyException(string message) : base(message){}
+    }
 }

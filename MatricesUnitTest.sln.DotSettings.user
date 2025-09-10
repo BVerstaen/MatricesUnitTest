@@ -7,5 +7,6 @@
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests03_IdentityMatrices&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests04_ScalarMultiplication&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests05_MatricesAddAndSubtract&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests06_MatricesMultiplication&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

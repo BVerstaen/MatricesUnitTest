@@ -7,9 +7,9 @@ namespace Maths_Matrices.Tests
         private int[,] matrice;
 
         #region Constructors
-        public MatrixInt(int columns, int lines)
+        public MatrixInt(int lines, int colums)
         {
-            matrice = new int[columns, lines];
+            matrice = new int[lines, colums];
         }
 
         public MatrixInt(int[,] matrice)
@@ -158,5 +158,43 @@ namespace Maths_Matrices.Tests
         public static MatrixInt operator -(MatrixInt m1, MatrixInt m2) => MatrixInt.Substract(m1, m2);
 
         #endregion
+
+        #region MatricesMultiplication
+
+        public MatrixInt Multiply(MatrixInt m2)
+        {
+            if(NbColumns != m2.NbLines)
+                throw new MatrixMultiplyException($"Number of columns of m1 must be equal to the number of lines of m2.");
+            
+            MatrixInt newMatrice = new MatrixInt(NbLines, m2.NbColumns);
+
+            for (int i = 0; i < NbLines; i++)
+            {
+                for (int j = 0; j < m2.NbColumns; j++)
+                {
+                    int result = 0;
+                    for (int k = 0; k < NbColumns; k++)
+                    {
+                        int n1 = matrice[i, k];
+                        int n2 = m2[k, j];
+                        result += n1 * n2; 
+                    }
+                    newMatrice[i,j] = result;
+                }
+            }
+            
+            return newMatrice;
+        }
+        
+        public static MatrixInt Multiply(MatrixInt m1, MatrixInt m2)
+        {
+            return m1.Multiply(m2);;
+        }
+        
+        public static MatrixInt operator *(MatrixInt m1, MatrixInt m2) => MatrixInt.Multiply(m1, m2);
+        #endregion
+
+
+
     }
 }

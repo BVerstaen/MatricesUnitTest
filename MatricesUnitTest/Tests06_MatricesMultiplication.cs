@@ -42,15 +42,15 @@ namespace Maths_Matrices.Tests
                 { 2, 1 },
                 { 7, 5 }
             });
-
+        
             MatrixInt m2 = new MatrixInt(new[,]
             {
                 { 4, 3, 5 },
                 { 1, 2, 1 }
             });
-
+        
             MatrixInt m3 = MatrixInt.Multiply(m1, m2);
-
+        
             Assert.AreEqual(new[,]
             {
                 { 8, 11, 9 },
@@ -69,15 +69,15 @@ namespace Maths_Matrices.Tests
                 { 7, 6 },
                 { 23, 1 },
             });
-
+        
             MatrixInt m2 = new MatrixInt(new[,]
             {
                 { 8, 5, 2 },
                 { 3, 1, 2 }
             });
-
+        
             MatrixInt m3 = m1 * m2;
-
+        
             Assert.AreEqual(new[,]
             {
                 { 20, 9, 10 },
@@ -95,7 +95,7 @@ namespace Maths_Matrices.Tests
                 { 1, 2 },
                 { 3, 4 }
             });
-
+        
             MatrixInt m2 = new MatrixInt(new[,]
             {
                 { 0, 1, 5, 9 },
