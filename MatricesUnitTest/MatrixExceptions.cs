@@ -16,4 +16,9 @@ namespace Maths_Matrices.Tests
     {
         public MatrixMultiplyException(string message) : base(message){}
     }
+
+    public class MatrixScalarZeroException : Exception
+    {
+        public MatrixScalarZeroException(string message) : base(message){}
+    }
 }

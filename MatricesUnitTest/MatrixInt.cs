@@ -4,48 +4,48 @@ namespace Maths_Matrices.Tests
 {
     public class MatrixInt
     {
-        private int[,] matrice;
+        private int[,] _matrix;
 
         #region Constructors
-        public MatrixInt(int lines, int colums)
+        public MatrixInt(int lines, int columns)
         {
-            matrice = new int[lines, colums];
+            _matrix = new int[lines, columns];
         }
 
-        public MatrixInt(int[,] matrice)
+        public MatrixInt(int[,] matrix)
         {
-            this.matrice = matrice;
+            this._matrix = matrix;
         }
 
-        public MatrixInt(MatrixInt matriceToCopy)
+        public MatrixInt(MatrixInt matrixToCopy)
         {
-            matrice = new int[matriceToCopy.NbLines, matriceToCopy.NbColumns];
-            Array.Copy(matriceToCopy.matrice, matriceToCopy.matrice.GetLowerBound(0), matrice, matrice.GetLowerBound(0), matrice.Length);
+            _matrix = new int[matrixToCopy.NbLines, matrixToCopy.NbColumns];
+            Array.Copy(matrixToCopy._matrix, matrixToCopy._matrix.GetLowerBound(0), _matrix, _matrix.GetLowerBound(0), _matrix.Length);
         }
         #endregion
         
         #region Fields & Getters / Setters
-        public int NbLines => matrice.GetLength(0);
-        public int NbColumns => matrice.GetLength(1);
+        public int NbLines => _matrix.GetLength(0);
+        public int NbColumns => _matrix.GetLength(1);
         
-        public int[,] ToArray2D() => matrice;
+        public int[,] ToArray2D() => _matrix;
         
         public int this[int i, int i1]
         {
-            get => matrice[i, i1];
-            set => matrice[i, i1] = value;
+            get => _matrix[i, i1];
+            set => _matrix[i, i1] = value;
         }
         #endregion
         
         #region Identity
         public static MatrixInt Identity(int diagonal)
         {
-            MatrixInt newMatrice = new MatrixInt(diagonal, diagonal);
+            MatrixInt newMatrix = new MatrixInt(diagonal, diagonal);
             for (int i = 0; i < diagonal; i++)
             {
-                newMatrice[i, i] = 1;
+                newMatrix[i, i] = 1;
             }
-            return newMatrice;
+            return newMatrix;
         }
         
         public bool IsIdentity()
@@ -58,10 +58,10 @@ namespace Maths_Matrices.Tests
                 for (int j = 0; j < NbLines; j++)
                 {
                     //Check if there's anything else than a 0
-                    if (matrice[j, i] != 0)
+                    if (_matrix[j, i] != 0)
                     {
                         //Check if is a 1 in a diagonal
-                        if (matrice[i, j] != 1 || i != j)
+                        if (_matrix[i, j] != 1 || i != j)
                             return false;
                     }
                 }
@@ -78,7 +78,7 @@ namespace Maths_Matrices.Tests
             {
                 for (int k = 0; k < NbColumns; k++)
                 {
-                    matrice[j, k] *= i;
+                    _matrix[j, k] *= i;
                 }
             }
         }
@@ -90,7 +90,7 @@ namespace Maths_Matrices.Tests
             {
                 for (int k = 0; k < newMatrix.NbColumns; k++)
                 {
-                    newMatrix.matrice[j, k] *= i;
+                    newMatrix._matrix[j, k] *= i;
                 }
             }
             
@@ -116,16 +116,16 @@ namespace Maths_Matrices.Tests
             {
                 for (int j = 0; j < NbColumns; j++)
                 {
-                    matrice[i, j] += m2[i, j];
+                    _matrix[i, j] += m2[i, j];
                 }
             }
         }
 
         public static MatrixInt Add(MatrixInt m1, MatrixInt m2)
         {
-            MatrixInt newMatrice = new MatrixInt(m1);
-            newMatrice.Add(m2);
-            return newMatrice;
+            MatrixInt newMatrix = new MatrixInt(m1);
+            newMatrix.Add(m2);
+            return newMatrix;
         }
         
         public static MatrixInt operator +(MatrixInt m1, MatrixInt m2) => MatrixInt.Add(m1, m2);
@@ -133,7 +133,7 @@ namespace Maths_Matrices.Tests
 
         #region Substraction
 
-        public void Substract(MatrixInt m2)
+        public void Subtract(MatrixInt m2)
         {
             //Check if matrices have same number of lines / columns
             if(NbLines != m2.NbLines || NbColumns != m2.NbColumns)
@@ -143,19 +143,19 @@ namespace Maths_Matrices.Tests
             {
                 for (int j = 0; j < NbColumns; j++)
                 {
-                    matrice[i, j] -= m2[i, j];
+                    _matrix[i, j] -= m2[i, j];
                 }
             }
         }
 
-        public static MatrixInt Substract(MatrixInt m1, MatrixInt m2)
+        public static MatrixInt Subtract(MatrixInt m1, MatrixInt m2)
         {
-            MatrixInt newMatrice = new MatrixInt(m1);
-            newMatrice.Substract(m2);
-            return newMatrice;
+            MatrixInt newMatrix = new MatrixInt(m1);
+            newMatrix.Subtract(m2);
+            return newMatrix;
         }
         
-        public static MatrixInt operator -(MatrixInt m1, MatrixInt m2) => MatrixInt.Substract(m1, m2);
+        public static MatrixInt operator -(MatrixInt m1, MatrixInt m2) => MatrixInt.Subtract(m1, m2);
 
         #endregion
 
@@ -166,7 +166,7 @@ namespace Maths_Matrices.Tests
             if(NbColumns != m2.NbLines)
                 throw new MatrixMultiplyException($"Number of columns of m1 must be equal to the number of lines of m2.");
             
-            MatrixInt newMatrice = new MatrixInt(NbLines, m2.NbColumns);
+            MatrixInt newMatrix = new MatrixInt(NbLines, m2.NbColumns);
 
             for (int i = 0; i < NbLines; i++)
             {
@@ -175,20 +175,20 @@ namespace Maths_Matrices.Tests
                     int result = 0;
                     for (int k = 0; k < NbColumns; k++)
                     {
-                        int n1 = matrice[i, k];
+                        int n1 = _matrix[i, k];
                         int n2 = m2[k, j];
                         result += n1 * n2; 
                     }
-                    newMatrice[i,j] = result;
+                    newMatrix[i,j] = result;
                 }
             }
             
-            return newMatrice;
+            return newMatrix;
         }
         
         public static MatrixInt Multiply(MatrixInt m1, MatrixInt m2)
         {
-            return m1.Multiply(m2);;
+            return m1.Multiply(m2);
         }
         
         public static MatrixInt operator *(MatrixInt m1, MatrixInt m2) => MatrixInt.Multiply(m1, m2);
@@ -198,17 +198,17 @@ namespace Maths_Matrices.Tests
 
         public MatrixInt Transpose()
         {
-            MatrixInt transposedMatrice = new MatrixInt(NbColumns, NbLines);
+            MatrixInt transposedMatrix = new MatrixInt(NbColumns, NbLines);
 
             for (int i = 0; i < NbLines; i++)
             {
                 for (int j = 0; j < NbColumns; j++)
                 {
-                    transposedMatrice[j,i] = matrice[i, j];
+                    transposedMatrix[j,i] = _matrix[i, j];
                 }
             }
             
-            return transposedMatrice;
+            return transposedMatrix;
         }
         
         public static MatrixInt Transpose(MatrixInt m1) => m1.Transpose();

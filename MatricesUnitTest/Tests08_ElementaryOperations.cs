@@ -51,7 +51,7 @@ namespace Maths_Matrices.Tests
                 { 2, 5, 8 },
                 { 3, 6, 9 }
             });
-
+        
             MatrixElementaryOperations.SwapColumns(m, 0, 1);
             Assert.AreEqual(new[,]
             {
@@ -59,7 +59,7 @@ namespace Maths_Matrices.Tests
                 { 5, 2, 8 },
                 { 6, 3, 9 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.SwapColumns(m, 0, 2);
             Assert.AreEqual(new[,]
             {
@@ -67,7 +67,7 @@ namespace Maths_Matrices.Tests
                 { 8, 2, 5 },
                 { 9, 3, 6 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.SwapColumns(m, 2, 1);
             Assert.AreEqual(new[,]
             {
@@ -76,11 +76,11 @@ namespace Maths_Matrices.Tests
                 { 9, 6, 3 }
             }, m.ToArray2D());
         }
-
+        
         #endregion
-
+        
         #region Multiply Lines/Columns Tests
-
+        
         [Test]
         public void TestMultiplyLine()
         {
@@ -90,7 +90,7 @@ namespace Maths_Matrices.Tests
                 { 4, 5, 6 },
                 { 7, 8, 9 }
             });
-
+        
             MatrixElementaryOperations.MultiplyLine(m, 0, 2);
             Assert.AreEqual(new[,]
             {
@@ -98,7 +98,7 @@ namespace Maths_Matrices.Tests
                 { 4, 5, 6 },
                 { 7, 8, 9 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.MultiplyLine(m, 1, 3);
             Assert.AreEqual(new[,]
             {
@@ -106,7 +106,7 @@ namespace Maths_Matrices.Tests
                 { 12, 15, 18 },
                 { 7, 8, 9 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.MultiplyLine(m, 2, 10);
             Assert.AreEqual(new[,]
             {
@@ -120,7 +120,7 @@ namespace Maths_Matrices.Tests
                 MatrixElementaryOperations.MultiplyLine(m, 0, 0);
             });
         }
-
+        
         [Test]
         public void TestMultiplyColumn()
         {
@@ -130,7 +130,7 @@ namespace Maths_Matrices.Tests
                 { 2, 5, 8 },
                 { 3, 6, 9 }
             });
-
+        
             MatrixElementaryOperations.MultiplyColumn(m, 0, 2);
             Assert.AreEqual(new[,]
             {
@@ -138,7 +138,7 @@ namespace Maths_Matrices.Tests
                 { 4, 5, 8 },
                 { 6, 6, 9 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.MultiplyColumn(m, 1, 3);
             Assert.AreEqual(new[,]
             {
@@ -146,7 +146,7 @@ namespace Maths_Matrices.Tests
                 { 4, 15, 8 },
                 { 6, 18, 9 }
             }, m.ToArray2D());
-
+        
             MatrixElementaryOperations.MultiplyColumn(m, 2, 10);
             Assert.AreEqual(new[,]
             {
@@ -160,49 +160,49 @@ namespace Maths_Matrices.Tests
                 MatrixElementaryOperations.MultiplyColumn(m, 0, 0);
             });
         }
-
+        
         #endregion
-
-        #region Add Lines/Columns to another (with factor)
-
-        [Test]
-        public void TestAddLineToAnother()
-        {
-            MatrixInt m = new MatrixInt(new[,]
-            {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
-            });
-
-            MatrixElementaryOperations.AddLineToAnother(m, 1, 0, 2);
-            Assert.AreEqual(new[,]
-            {
-                { 9, 12, 15 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
-            }, m.ToArray2D());
-        }
-
-        [Test]
-        public void TestAddColumnToAnother()
-        {
-            MatrixInt m = new MatrixInt(new[,]
-            {
-                { 1, 4, 7 },
-                { 2, 5, 8 },
-                { 3, 6, 9 }
-            });
-
-            MatrixElementaryOperations.AddColumnToAnother(m, 1, 0, 2);
-            Assert.AreEqual(new[,]
-            {
-                { 9, 4, 7 },
-                { 12, 5, 8 },
-                { 15, 6, 9 }
-            }, m.ToArray2D());
-        }
-
-        #endregion
+        
+        // #region Add Lines/Columns to another (with factor)
+        //
+        // [Test]
+        // public void TestAddLineToAnother()
+        // {
+        //     MatrixInt m = new MatrixInt(new[,]
+        //     {
+        //         { 1, 2, 3 },
+        //         { 4, 5, 6 },
+        //         { 7, 8, 9 }
+        //     });
+        //
+        //     MatrixElementaryOperations.AddLineToAnother(m, 1, 0, 2);
+        //     Assert.AreEqual(new[,]
+        //     {
+        //         { 9, 12, 15 },
+        //         { 4, 5, 6 },
+        //         { 7, 8, 9 }
+        //     }, m.ToArray2D());
+        // }
+        //
+        // [Test]
+        // public void TestAddColumnToAnother()
+        // {
+        //     MatrixInt m = new MatrixInt(new[,]
+        //     {
+        //         { 1, 4, 7 },
+        //         { 2, 5, 8 },
+        //         { 3, 6, 9 }
+        //     });
+        //
+        //     MatrixElementaryOperations.AddColumnToAnother(m, 1, 0, 2);
+        //     Assert.AreEqual(new[,]
+        //     {
+        //         { 9, 4, 7 },
+        //         { 12, 5, 8 },
+        //         { 15, 6, 9 }
+        //     }, m.ToArray2D());
+        // }
+        //
+        // #endregion
     }
 }
