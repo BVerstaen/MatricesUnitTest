@@ -43,6 +43,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="MatrixExceptions.cs" />
         <Compile Include="MatrixInt.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Tests01_NewMatrices.cs" />

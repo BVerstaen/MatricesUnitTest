@@ -19,7 +19,7 @@ namespace Maths_Matrices.Tests
 
         public MatrixInt(MatrixInt matriceToCopy)
         {
-            matrice = new int[matriceToCopy.NbColumns, matriceToCopy.NbLines];
+            matrice = new int[matriceToCopy.NbLines, matriceToCopy.NbColumns];
             Array.Copy(matriceToCopy.matrice, matriceToCopy.matrice.GetLowerBound(0), matrice, matrice.GetLowerBound(0), matrice.Length);
         }
         #endregion
@@ -106,32 +106,57 @@ namespace Maths_Matrices.Tests
 
         #region Additions
 
-        public void Add(MatrixInt m2) => matrice = Addition(this, m2).matrice;
-        
-        private static MatrixInt Addition(MatrixInt m1, MatrixInt m2)
+        public void Add(MatrixInt m2)
         {
             //Check if matrices have same number of lines / columns
-            if(m1.NbLines != m2.NbLines || m1.NbColumns != m2.NbColumns)
-                throw new ArgumentException("Matrices must have the same number of lines and columns.");
-
-            MatrixInt newMatrice = new MatrixInt(m1.NbColumns, m1.NbLines);
+            if(NbLines != m2.NbLines || NbColumns != m2.NbColumns)
+                throw new MatrixSumException($"Matrices must have the same number of lines and columns.");
             
-            for (int i = 0; i < m1.NbLines; i++)
+            for (int i = 0; i < NbLines; i++)
             {
-                for (int j = 0; j < m1.NbColumns; j++)
+                for (int j = 0; j < NbColumns; j++)
                 {
-                    newMatrice[i, j] = m1[i, j] + m2[i, j];
+                    matrice[i, j] += m2[i, j];
                 }
             }
-
-            return newMatrice;
         }
 
         public static MatrixInt Add(MatrixInt m1, MatrixInt m2)
         {
-            return Addition(m1, m2);
+            MatrixInt newMatrice = new MatrixInt(m1);
+            newMatrice.Add(m2);
+            return newMatrice;
         }
         
+        public static MatrixInt operator +(MatrixInt m1, MatrixInt m2) => MatrixInt.Add(m1, m2);
+        #endregion
+
+        #region Substraction
+
+        public void Substract(MatrixInt m2)
+        {
+            //Check if matrices have same number of lines / columns
+            if(NbLines != m2.NbLines || NbColumns != m2.NbColumns)
+                throw new MatrixSubstractException($"Matrices must have the same number of lines and columns.");
+            
+            for (int i = 0; i < NbLines; i++)
+            {
+                for (int j = 0; j < NbColumns; j++)
+                {
+                    matrice[i, j] -= m2[i, j];
+                }
+            }
+        }
+
+        public static MatrixInt Substract(MatrixInt m1, MatrixInt m2)
+        {
+            MatrixInt newMatrice = new MatrixInt(m1);
+            newMatrice.Substract(m2);
+            return newMatrice;
+        }
+        
+        public static MatrixInt operator -(MatrixInt m1, MatrixInt m2) => MatrixInt.Substract(m1, m2);
+
         #endregion
     }
 }
