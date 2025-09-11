@@ -46,6 +46,7 @@
         <Compile Include="MatrixElementaryOperations.cs" />
         <Compile Include="MatrixExceptions.cs" />
         <Compile Include="MatrixFloat.cs" />
+        <Compile Include="MatrixGeneric.cs" />
         <Compile Include="MatrixInt.cs" />
         <Compile Include="MatrixRowReductionAlgorithm.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
