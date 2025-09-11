@@ -11,7 +11,6 @@ namespace Maths_Matrices.Tests
             int i = 0;
             for (int j = 0; j < m1.NbColumns; j++)
             {
-                
                 //Find highest number
                 float highestNumber = augmentedMatrix[i, j];
                 int highestLine = i;
@@ -24,7 +23,7 @@ namespace Maths_Matrices.Tests
                     }
                 }
                 //Check non-null
-                if(highestLine == 0)
+                if(Math.Abs(highestNumber) <= 1e-6f)
                     continue;
                 
                 //Swap lines if necessary
