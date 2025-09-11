@@ -215,6 +215,21 @@ namespace Maths_Matrices.Tests
         
         #endregion
 
+        #region AugmentedMatrix
+        public static MatrixInt GenerateAugmentedMatrix(MatrixInt m1, MatrixInt m2)
+        {
+            MatrixInt newMatrix = new MatrixInt(m1.NbLines, m1.NbColumns + m2.NbColumns);
+
+            for (int i = 0; i < newMatrix.NbLines; i++)
+            {
+                for (int j = 0; j < newMatrix.NbColumns; j++)
+                {
+                    newMatrix[i, j] = j < m1.NbColumns ? m1[i, j] : m2[i, j - m1.NbColumns];
+                }
+            }
+            return  newMatrix;
+        }
+        #endregion
 
     }
 }

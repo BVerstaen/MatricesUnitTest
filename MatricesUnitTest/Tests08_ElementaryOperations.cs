@@ -163,46 +163,46 @@ namespace Maths_Matrices.Tests
         
         #endregion
         
-        // #region Add Lines/Columns to another (with factor)
-        //
-        // [Test]
-        // public void TestAddLineToAnother()
-        // {
-        //     MatrixInt m = new MatrixInt(new[,]
-        //     {
-        //         { 1, 2, 3 },
-        //         { 4, 5, 6 },
-        //         { 7, 8, 9 }
-        //     });
-        //
-        //     MatrixElementaryOperations.AddLineToAnother(m, 1, 0, 2);
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 9, 12, 15 },
-        //         { 4, 5, 6 },
-        //         { 7, 8, 9 }
-        //     }, m.ToArray2D());
-        // }
-        //
-        // [Test]
-        // public void TestAddColumnToAnother()
-        // {
-        //     MatrixInt m = new MatrixInt(new[,]
-        //     {
-        //         { 1, 4, 7 },
-        //         { 2, 5, 8 },
-        //         { 3, 6, 9 }
-        //     });
-        //
-        //     MatrixElementaryOperations.AddColumnToAnother(m, 1, 0, 2);
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 9, 4, 7 },
-        //         { 12, 5, 8 },
-        //         { 15, 6, 9 }
-        //     }, m.ToArray2D());
-        // }
-        //
-        // #endregion
+        #region Add Lines/Columns to another (with factor)
+        
+        [Test]
+        public void TestAddLineToAnother()
+        {
+            MatrixInt m = new MatrixInt(new[,]
+            {
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            });
+        
+            MatrixElementaryOperations.AddLineToAnother(m, 1, 0, 2);
+            Assert.AreEqual(new[,]
+            {
+                { 9, 12, 15 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            }, m.ToArray2D());
+        }
+        
+        [Test]
+        public void TestAddColumnToAnother()
+        {
+            MatrixInt m = new MatrixInt(new[,]
+            {
+                { 1, 4, 7 },
+                { 2, 5, 8 },
+                { 3, 6, 9 }
+            });
+        
+            MatrixElementaryOperations.AddColumnToAnother(m, 1, 0, 2);
+            Assert.AreEqual(new[,]
+            {
+                { 9, 4, 7 },
+                { 12, 5, 8 },
+                { 15, 6, 9 }
+            }, m.ToArray2D());
+        }
+        
+        #endregion
     }
 }

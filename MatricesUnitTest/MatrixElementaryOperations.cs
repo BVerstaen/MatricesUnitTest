@@ -54,7 +54,23 @@
         
         #endregion
 
+        #region AddToAnotherWithFactor
+        public static void AddLineToAnother(MatrixInt m, int lineFrom, int lineTo, int factor = 1)
+        {
+            for (int i = 0; i < m.NbColumns; i++)
+            {
+                m[lineTo, i] += m[lineFrom, i] * factor;
+            }
+        }
 
+        public static void AddColumnToAnother(MatrixInt m, int columnFrom, int columnTo, int factor = 1)
+        {
+            for (int i = 0; i < m.NbLines; i++)
+            {
+                m[i, columnTo] += m[i, columnFrom] * factor;
+            }
+        }
+        #endregion
 
     }
 }
