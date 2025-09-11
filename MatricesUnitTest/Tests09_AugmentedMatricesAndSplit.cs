@@ -31,34 +31,34 @@ namespace Maths_Matrices.Tests
             }, augmentedMatrix.ToArray2D());
         }
 
-        // [Test]
-        // public void TestSplitMatrix()
-        // {
-        //     MatrixInt m = new MatrixInt(new[,]
-        //     {
-        //         { 2, 1, 3, 0 },
-        //         { 0, 1, -1, 0 },
-        //         { 1, 3, -1, 0 }
-        //     });
-        //
-        //     //This method use deconstruction tuple system
-        //     //More information here =>
-        //     //https://docs.microsoft.com/fr-fr/dotnet/csharp/fundamentals/functional/deconstruct
-        //     (MatrixInt m1, MatrixInt m2) = m.Split(2);
-        //
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 2, 1, 3 },
-        //         { 0, 1, -1 },
-        //         { 1, 3, -1 }
-        //     }, m1.ToArray2D());
-        //
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 0 },
-        //         { 0 },
-        //         { 0 }
-        //     }, m2.ToArray2D());
-        // }
+        [Test]
+        public void TestSplitMatrix()
+        {
+            MatrixInt m = new MatrixInt(new[,]
+            {
+                { 2, 1, 3, 0 },
+                { 0, 1, -1, 0 },
+                { 1, 3, -1, 0 }
+            });
+        
+            //This method use deconstruction tuple system
+            //More information here =>
+            //https://docs.microsoft.com/fr-fr/dotnet/csharp/fundamentals/functional/deconstruct
+            (MatrixInt m1, MatrixInt m2) = m.Split(2);
+        
+            Assert.AreEqual(new[,]
+            {
+                { 2, 1, 3 },
+                { 0, 1, -1 },
+                { 1, 3, -1 }
+            }, m1.ToArray2D());
+        
+            Assert.AreEqual(new[,]
+            {
+                { 0 },
+                { 0 },
+                { 0 }
+            }, m2.ToArray2D());
+        }
     }
 }

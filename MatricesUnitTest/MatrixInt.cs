@@ -215,7 +215,7 @@ namespace Maths_Matrices.Tests
         
         #endregion
 
-        #region AugmentedMatrix
+        #region AugmentedMatrix and Split
         public static MatrixInt GenerateAugmentedMatrix(MatrixInt m1, MatrixInt m2)
         {
             MatrixInt newMatrix = new MatrixInt(m1.NbLines, m1.NbColumns + m2.NbColumns);
@@ -229,7 +229,27 @@ namespace Maths_Matrices.Tests
             }
             return  newMatrix;
         }
+        
+        public (MatrixInt, MatrixInt) Split(int i)
+        {
+            MatrixInt m1 = new MatrixInt(NbLines, i + 1);
+            MatrixInt m2 = new MatrixInt(NbLines, NbColumns - (i+1));
+
+            for (int j = 0; j < NbLines; j++)
+            {
+                for (int k = 0; k < NbColumns; k++)
+                {
+                    if(k <= i)
+                        m1[j, k] = _matrix[j, k];
+                    else
+                        m2[j, k - (i+1)] = _matrix[j, k];
+                }
+            }
+            
+            return (m1, m2);
+        }
         #endregion
+
 
     }
 }
