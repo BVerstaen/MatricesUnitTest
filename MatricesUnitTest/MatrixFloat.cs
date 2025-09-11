@@ -61,7 +61,7 @@ namespace Maths_Matrices.Tests
                     if (_matrix[j, i] != 0)
                     {
                         //Check if is a 1 in a diagonal
-                        if (_matrix[i, j] != 1.0f || i != j)
+                        if (Math.Abs(_matrix[i, j] - 1.0f) > 0.0f || i != j)
                             return false;
                     }
                 }
