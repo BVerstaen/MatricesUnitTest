@@ -72,5 +72,40 @@
         }
         #endregion
 
+        #region Float equivalent
+
+        public static void SwapLines(MatrixFloat m, int p1, int p2)
+        {
+            //swap values
+            for (int i = 0; i < m.NbColumns; i++)
+            {
+                float p1Values = m[p1, i];
+                float p2Values = m[p2, i];
+                m[p1, i] = p2Values;
+                m[p2, i] = p1Values;
+            }
+        }
+
+        public static void MultiplyLine(MatrixFloat m, int line, float scalar)
+        {
+            if (scalar == 0)
+                throw new MatrixScalarZeroException("The scalar cannot be zero.");
+
+            for (int i = 0; i < m.NbColumns; i++)
+            {
+                m[line, i] *= scalar;
+            }
+        }
+
+        public static void AddLineToAnother(MatrixFloat m, int lineFrom, int lineTo, float factor = 1)
+        {
+            for (int i = 0; i < m.NbColumns; i++)
+            {
+                m[lineTo, i] += m[lineFrom, i] * factor;
+            }
+        }
+        
+        #endregion
+        
     }
 }

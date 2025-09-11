@@ -15,8 +15,10 @@
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests07_TransposeMatrices&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests08_ElementaryOperations&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests09_AugmentedMatricesAndSplit&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests10_RowReduction&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	
 	
 	
 	

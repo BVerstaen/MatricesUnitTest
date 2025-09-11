@@ -45,7 +45,9 @@
     <ItemGroup>
         <Compile Include="MatrixElementaryOperations.cs" />
         <Compile Include="MatrixExceptions.cs" />
+        <Compile Include="MatrixFloat.cs" />
         <Compile Include="MatrixInt.cs" />
+        <Compile Include="MatrixRowReductionAlgorithm.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Tests01_NewMatrices.cs" />
         <Compile Include="Tests02_CopyAndModifyMatrices.cs" />
