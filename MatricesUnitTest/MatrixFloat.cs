@@ -73,7 +73,7 @@ namespace Maths_Matrices.Tests
         #endregion
 
         #region Scalar Multiplication
-        public void Multiply(int i)
+        public void Multiply(float i)
         {
             for (int j = 0; j < NbLines; j++)
             {
@@ -84,7 +84,7 @@ namespace Maths_Matrices.Tests
             }
         }
 
-        public static MatrixFloat Multiply(MatrixFloat matrixFloat, int i)
+        public static MatrixFloat Multiply(MatrixFloat matrixFloat, float i)
         {
             MatrixFloat newMatrix = new MatrixFloat(matrixFloat);
             for (int j = 0; j < newMatrix.NbLines; j++)
@@ -310,7 +310,7 @@ namespace Maths_Matrices.Tests
             {
                 //get submatrix
                 MatrixFloat subMatrix = m.SubMatrix(0, i);
-                                    //Get cofactor                      //Recursive determinant
+                                    //Get cofactor                     //Recursive determinant
                 finalDeterminant += (float)Math.Pow(-1, i) * m[0, i] * Determinant(subMatrix);
             }
             return finalDeterminant;
@@ -341,6 +341,10 @@ namespace Maths_Matrices.Tests
         }
         #endregion
 
+        #region InvertByDeterminant
+        public MatrixFloat InvertByDeterminant() => Multiply(Adjugate(), 1 / Determinant(this));
+        public static MatrixFloat InvertByDeterminant(MatrixFloat m) => m.InvertByDeterminant();
+        #endregion
 
     }
 }
