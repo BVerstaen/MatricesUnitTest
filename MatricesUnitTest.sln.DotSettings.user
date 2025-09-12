@@ -34,6 +34,9 @@
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests12_SubMatrices&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests13_Determinants&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests14_AdjugateMatrices.TestCalculateAdjugateMatrixInstance&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests14_AdjugateMatrices.TestCalculateAdjugateMatrixStatic&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests14_AdjugateMatrices.TestCalculateAdjugateMatrixIdentity4x4&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests14_AdjugateMatrices&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

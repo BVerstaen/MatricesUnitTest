@@ -297,7 +297,12 @@ namespace Maths_Matrices.Tests
         #region Determinant
         public static float Determinant(MatrixFloat m)
         {
-            if(m.NbColumns <= 2)
+            //Handle 1x1 matrix
+            if (m.NbColumns < 2)
+                return m[0, 0];
+            
+            //Handle 2x2 matrix
+            if(m.NbColumns == 2)
                 return m[0, 0] * m[1, 1] - m[0, 1] * m[1, 0];
             
             float finalDeterminant = 0.0f;
@@ -315,19 +320,27 @@ namespace Maths_Matrices.Tests
         #region Adjugate
         public MatrixFloat Adjugate()
         {
+            MatrixFloat transposedMatrix = Transpose();
             MatrixFloat adjugateMatrix = new MatrixFloat(NbLines, NbColumns);
     
             for (int i = 0; i < NbLines; i++)
             {
                 for (int j = 0; j < NbColumns; j++)
                 {
-                    MatrixFloat subMatrix = SubMatrix(i, j);
+                    MatrixFloat subMatrix = transposedMatrix.SubMatrix(i, j);
                     adjugateMatrix[i, j] = (float)Math.Pow(-1, i + j) * Determinant(subMatrix);
                 }
             }
+
             return adjugateMatrix;
         }
+        
+        public static MatrixFloat Adjugate(MatrixFloat m)
+        {
+            return m.Adjugate();
+        }
         #endregion
+
 
     }
 }
