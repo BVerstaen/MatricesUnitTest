@@ -335,14 +335,19 @@ namespace Maths_Matrices.Tests
             return adjugateMatrix;
         }
         
-        public static MatrixFloat Adjugate(MatrixFloat m)
-        {
-            return m.Adjugate();
-        }
+        public static MatrixFloat Adjugate(MatrixFloat m) => m.Adjugate();
         #endregion
 
         #region InvertByDeterminant
-        public MatrixFloat InvertByDeterminant() => Multiply(Adjugate(), 1 / Determinant(this));
+        public MatrixFloat InvertByDeterminant()
+        {
+            float determinant = Determinant(this);
+            if (determinant == 0)
+                throw new MatrixInvertException("Determinant is zero. Matrix can't be inverted.");
+            
+            return Multiply(Adjugate(), 1 / determinant);
+        }
+
         public static MatrixFloat InvertByDeterminant(MatrixFloat m) => m.InvertByDeterminant();
         #endregion
 

@@ -49,21 +49,21 @@ namespace Maths_Matrices.Tests
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
         }
         
-        // [Test]
-        // public void TestInvertImpossibleMatrix()
-        // {
-        //     MatrixFloat m = new MatrixFloat(new[,]
-        //     {
-        //         { 1f, 2f, 3f },
-        //         { 4f, 5f, 6f },
-        //         { 7f, 8f, 9f },
-        //     });
-        //
-        //     Assert.Throws<MatrixInvertException>(() =>
-        //     {
-        //         MatrixFloat mInverted = m.InvertByDeterminant();
-        //     });
-        // }
+        [Test]
+        public void TestInvertImpossibleMatrix()
+        {
+            MatrixFloat m = new MatrixFloat(new[,]
+            {
+                { 1f, 2f, 3f },
+                { 4f, 5f, 6f },
+                { 7f, 8f, 9f },
+            });
+        
+            Assert.Throws<MatrixInvertException>(() =>
+            {
+                MatrixFloat mInverted = m.InvertByDeterminant();
+            });
+        }
         
     }
 }
