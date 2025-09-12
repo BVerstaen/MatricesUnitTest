@@ -350,6 +350,5 @@ namespace Maths_Matrices.Tests
 
         public static MatrixFloat InvertByDeterminant(MatrixFloat m) => m.InvertByDeterminant();
         #endregion
-
     }
 }
