@@ -23,6 +23,15 @@ namespace Maths_Matrices.Tests
             _matrix = new float[matrixToCopy.NbLines, matrixToCopy.NbColumns];
             Array.Copy(matrixToCopy._matrix, matrixToCopy._matrix.GetLowerBound(0), _matrix, _matrix.GetLowerBound(0), _matrix.Length);
         }
+
+        public MatrixFloat(Vector4 vector)
+        {
+            _matrix = new float[4, 1];
+            _matrix[0, 0] = vector.x;
+            _matrix[1, 0] = vector.y;
+            _matrix[2, 0] = vector.z;
+            _matrix[3, 0] = vector.w;
+        }
         #endregion
         
         #region Fields & Getters / Setters

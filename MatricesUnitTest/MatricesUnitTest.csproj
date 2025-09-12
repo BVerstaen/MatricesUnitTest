@@ -66,6 +66,7 @@
         <Compile Include="Tests14_AdjugateMatrices.cs" />
         <Compile Include="Tests15_InvertMatricesUsingDeterminant.cs" />
         <Compile Include="Tests16_TransformationMatrices.cs" />
+        <Compile Include="Tests17_TransformLocalPosition.cs" />
         <Compile Include="Vector4.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

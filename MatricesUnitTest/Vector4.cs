@@ -1,4 +1,6 @@
-﻿namespace Maths_Matrices.Tests
+﻿using System;
+
+namespace Maths_Matrices.Tests
 {
     public struct Vector4
     {
@@ -11,18 +13,23 @@
             this.z = z;
             this.w = w;
         }
+
+        public Vector4(MatrixFloat matrix)
+        {
+            if(matrix.NbColumns != 1 || matrix.NbLines != 4)
+                throw new ArgumentException("Matrix must be 4x1");
+            
+            this.x = matrix[0,0];
+            this.y = matrix[1,0];
+            this.z = matrix[2,0];
+            this.w = matrix[3,0];
+        }
         
         public static Vector4 operator*(MatrixFloat m, Vector4 v)
         {
-            Vector4 result = new Vector4();
-            for (int i = 0; i < m.NbColumns; i++)
-            {
-                result.x += m[0, i] * v.x;
-                result.y += m[1, i] * v.y;
-                result.z += m[2, i] * v.z;
-                result.w += m[3, i] * v.w;
-            }
-            return result;
+            MatrixFloat vectorMatrix = new MatrixFloat(v);
+            vectorMatrix = m * vectorMatrix;
+            return  new Vector4(vectorMatrix);
         }
     }
 }
