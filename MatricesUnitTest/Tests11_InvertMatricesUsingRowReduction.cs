@@ -14,9 +14,9 @@ namespace Maths_Matrices.Tests
                 { 6f, 0f, -3f },
                 { -1f, 3f, 2f },
             });
-
+        
             MatrixFloat mInverted = m.InvertByRowReduction();
-
+        
             GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
             Assert.AreEqual(new[,]
             {
@@ -26,7 +26,7 @@ namespace Maths_Matrices.Tests
             }, mInverted.ToArray2D());
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
         }
-
+        
         [Test]
         public void TestInvertMatrixStatic()
         {
@@ -35,9 +35,9 @@ namespace Maths_Matrices.Tests
                 { 1f, 2f },
                 { 3f, 4f },
             });
-
+        
             MatrixFloat mInverted = MatrixFloat.InvertByRowReduction(m);
-
+        
             GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
             Assert.AreEqual(new[,]
             {
@@ -46,7 +46,7 @@ namespace Maths_Matrices.Tests
             }, mInverted.ToArray2D());
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
         }
-
+        
         [Test]
         public void TestInvertImpossibleMatrix()
         {
@@ -56,7 +56,7 @@ namespace Maths_Matrices.Tests
                 { 4f, 5f, 6f },
                 { 7f, 8f, 9f },
             });
-
+        
             Assert.Throws<MatrixInvertException>(() =>
             {
                 MatrixFloat mInverted = m.InvertByRowReduction();

@@ -4,7 +4,7 @@ namespace Maths_Matrices.Tests
 {
     public static class MatrixRowReductionAlgorithm
     {
-        public static (MatrixFloat, MatrixFloat) Apply(MatrixFloat m1, MatrixFloat m2)
+        public static (MatrixFloat, MatrixFloat) Apply(MatrixFloat m1, MatrixFloat m2, bool isInverting = false)
         {
             MatrixFloat augmentedMatrix = MatrixFloat.GenerateAugmentedMatrix(m1, m2);
 
@@ -23,8 +23,13 @@ namespace Maths_Matrices.Tests
                     }
                 }
                 //Check non-null
-                if(Math.Abs(highestNumber) <= 1e-6f)
-                    continue;
+                if (Math.Abs(highestNumber) <= 1e-6f)
+                {
+                    if (isInverting)
+                        throw new MatrixInvertException("Matrix can't be inverted");
+                    else
+                        continue;
+                }
                 
                 //Swap lines if necessary
                 if (highestLine != i)
@@ -47,7 +52,7 @@ namespace Maths_Matrices.Tests
                 i++;
             }
 
-            return augmentedMatrix.Split(augmentedMatrix.NbColumns - 2);
+            return augmentedMatrix.Split(m1.NbColumns - 1);
         }
     }
 }

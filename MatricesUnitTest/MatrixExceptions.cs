@@ -21,4 +21,9 @@ namespace Maths_Matrices.Tests
     {
         public MatrixScalarZeroException(string message) : base(message){}
     }
+
+    public class MatrixInvertException : Exception
+    {
+        public MatrixInvertException(string message) : base(message){}
+    }
 }

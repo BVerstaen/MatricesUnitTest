@@ -18,6 +18,24 @@
     &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests10_RowReduction&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cab4862f_002Db4b7_002D4a33_002Dbf0a_002D1c1e236e205d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestCopyAndChangeMatrices" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests02_CopyAndModifyMatrices.TestCopyAndChangeMatrices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests01_NewMatrices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests02_CopyAndModifyMatrices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests03_IdentityMatrices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests04_ScalarMultiplication&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests10_RowReduction&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests09_AugmentedMatricesAndSplit&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests08_ElementaryOperations&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests06_MatricesMultiplication&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests05_MatricesAddAndSubtract&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests11_InvertMatricesUsingRowReduction&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests12_SubMatrices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests13_Determinants&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests14_AdjugateMatrices.TestCalculateAdjugateMatrixInstance&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	

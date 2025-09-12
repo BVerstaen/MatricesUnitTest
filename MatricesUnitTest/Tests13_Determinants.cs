@@ -13,14 +13,14 @@ namespace Maths_Matrices.Tests
                 { 1f, 2f },
                 { 3f, 4f }
             });
-
+        
             float determinant = MatrixFloat.Determinant(m);
-
+        
             GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
             Assert.AreEqual(-2f, determinant);
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
         }
-
+        
         [Test]
         public void TestDeterminantMatrix3x3()
         {
@@ -30,9 +30,9 @@ namespace Maths_Matrices.Tests
                 { 4f, 5f, 6f },
                 { 7f, 8f, 9f },
             });
-
+        
             float determinant = MatrixFloat.Determinant(m);
-
+        
             GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
             Assert.AreEqual(0f, determinant);
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
@@ -48,9 +48,9 @@ namespace Maths_Matrices.Tests
                 { -1.732f, 2.000f, 0.000f, 3.000f },
                 { 0.000f, 0.000f, 0.000f, 1.000f },
             });
-
+        
             float determinant = MatrixFloat.Determinant(m);
-
+        
             GlobalSettings.DefaultFloatingPointTolerance = 0.1d;
             Assert.AreEqual(48f, determinant);
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;

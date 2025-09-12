@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Maths_Matrices.Tests
 {
@@ -250,6 +251,83 @@ namespace Maths_Matrices.Tests
         }
         #endregion
 
+        #region InverMatricesByRowReduction
+        public MatrixFloat InvertByRowReduction()
+        {
+            MatrixFloat identityMatrix = MatrixFloat.Identity(NbLines);
+            MatrixFloat m1 = new MatrixFloat(this);
+            MatrixFloat m2 = new MatrixFloat(identityMatrix);
+            (m1, m2) = MatrixRowReductionAlgorithm.Apply(this, m2, true);
+
+            return m2;
+        }
+        
+        public static MatrixFloat InvertByRowReduction(MatrixFloat m) => new MatrixFloat(m.InvertByRowReduction());
+        #endregion
+
+        #region SubMatrices
+        public MatrixFloat SubMatrix(int lineToSub, int columnToSub)
+        {
+            MatrixFloat newMatrix = new MatrixFloat(NbLines - 1, NbColumns -1);
+
+            int line = 0;
+            int column = 0;
+            for (int i = 0; i < NbLines; i++)
+            {
+                for (int j = 0; j < NbColumns; j++)
+                {
+                    if (i != lineToSub && j != columnToSub)
+                    {
+                        newMatrix[line, column] = _matrix[i, j];
+                        column++;
+                        if (column == newMatrix.NbColumns)
+                        {
+                            column = 0;
+                            line++;
+                        }
+                    }
+                }
+            }
+            return newMatrix;
+        }
+        
+        public static MatrixFloat SubMatrix(MatrixFloat m, int lineToSub, int columnToSub) => new MatrixFloat(m.SubMatrix(lineToSub, columnToSub));
+        #endregion
+
+        #region Determinant
+        public static float Determinant(MatrixFloat m)
+        {
+            if(m.NbColumns <= 2)
+                return m[0, 0] * m[1, 1] - m[0, 1] * m[1, 0];
+            
+            float finalDeterminant = 0.0f;
+            for (int i = 0; i < m.NbColumns; i++)
+            {
+                //get submatrix
+                MatrixFloat subMatrix = m.SubMatrix(0, i);
+                                    //Get cofactor                      //Recursive determinant
+                finalDeterminant += (float)Math.Pow(-1, i) * m[0, i] * Determinant(subMatrix);
+            }
+            return finalDeterminant;
+        }
+        #endregion
+
+        #region Adjugate
+        public MatrixFloat Adjugate()
+        {
+            MatrixFloat adjugateMatrix = new MatrixFloat(NbLines, NbColumns);
+    
+            for (int i = 0; i < NbLines; i++)
+            {
+                for (int j = 0; j < NbColumns; j++)
+                {
+                    MatrixFloat subMatrix = SubMatrix(i, j);
+                    adjugateMatrix[i, j] = (float)Math.Pow(-1, i + j) * Determinant(subMatrix);
+                }
+            }
+            return adjugateMatrix;
+        }
+        #endregion
 
     }
 }
