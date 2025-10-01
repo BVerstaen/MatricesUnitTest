@@ -5,53 +5,53 @@ namespace Maths_Matrices.Tests
     [TestFixture]
     public class Tests18_TransformLocalRotations
     {
-        // [Test]
-        // public void TestDefaultValues()
-        // {
-        //     GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
-        //     
-        //     Transform t = new Transform();
-        //     
-        //     //Default Rotation
-        //     Assert.AreEqual(0f, t.LocalRotation.x);
-        //     Assert.AreEqual(0f, t.LocalRotation.y);
-        //     Assert.AreEqual(0f, t.LocalRotation.z);
-        //
-        //     //Default Matrices
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 1f, 0f, 0f, 0f },
-        //         { 0f, 1f, 0f, 0f },
-        //         { 0f, 0f, 1f, 0f },
-        //         { 0f, 0f, 0f, 1f },
-        //     }, t.LocalRotationXMatrix.ToArray2D());
-        //     
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 1f, 0f, 0f, 0f },
-        //         { 0f, 1f, 0f, 0f },
-        //         { 0f, 0f, 1f, 0f },
-        //         { 0f, 0f, 0f, 1f },
-        //     }, t.LocalRotationYMatrix.ToArray2D());
-        //     
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 1f, 0f, 0f, 0f },
-        //         { 0f, 1f, 0f, 0f },
-        //         { 0f, 0f, 1f, 0f },
-        //         { 0f, 0f, 0f, 1f },
-        //     }, t.LocalRotationZMatrix.ToArray2D());
-        //     
-        //     Assert.AreEqual(new[,]
-        //     {
-        //         { 1f, 0f, 0f, 0f },
-        //         { 0f, 1f, 0f, 0f },
-        //         { 0f, 0f, 1f, 0f },
-        //         { 0f, 0f, 0f, 1f },
-        //     }, t.LocalRotationMatrix.ToArray2D());
-        //     
-        //     GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
-        // }
+        [Test]
+        public void TestDefaultValues()
+        {
+        GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
+        
+        Transform t = new Transform();
+        
+        //Default Rotation
+        Assert.AreEqual(0f, t.LocalRotation.x);
+        Assert.AreEqual(0f, t.LocalRotation.y);
+        Assert.AreEqual(0f, t.LocalRotation.z);
+        
+        //Default Matrices
+        Assert.AreEqual(new[,]
+        {
+            { 1f, 0f, 0f, 0f },
+            { 0f, 1f, 0f, 0f },
+            { 0f, 0f, 1f, 0f },
+            { 0f, 0f, 0f, 1f },
+        }, t.LocalRotationXMatrix.ToArray2D());
+        
+        Assert.AreEqual(new[,]
+        {
+            { 1f, 0f, 0f, 0f },
+            { 0f, 1f, 0f, 0f },
+            { 0f, 0f, 1f, 0f },
+            { 0f, 0f, 0f, 1f },
+        }, t.LocalRotationYMatrix.ToArray2D());
+        
+        Assert.AreEqual(new[,]
+        {
+            { 1f, 0f, 0f, 0f },
+            { 0f, 1f, 0f, 0f },
+            { 0f, 0f, 1f, 0f },
+            { 0f, 0f, 0f, 1f },
+        }, t.LocalRotationZMatrix.ToArray2D());
+        
+        Assert.AreEqual(new[,]
+        {
+            { 1f, 0f, 0f, 0f },
+            { 0f, 1f, 0f, 0f },
+            { 0f, 0f, 1f, 0f },
+            { 0f, 0f, 0f, 1f },
+        }, t.LocalRotationMatrix.ToArray2D());
+            
+            GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
+        }
         //
         // [Test]
         // public void TestChangeRotationXAxis()

@@ -3,6 +3,13 @@
     public class Transform
     {
         public Vector3 LocalPosition;
+        public Vector3 LocalRotation;
+
+        public Transform()
+        {
+            LocalPosition = Vector3.Zero;
+            LocalRotation = Vector3.Zero;
+        }
 
         public MatrixFloat LocalTranslationMatrix
         {
@@ -17,10 +24,44 @@
                 return matrix;
             }
         }
+        
+        #region LocalRotationMatrices
 
-        public Transform()
+        public MatrixFloat LocalRotationXMatrix
         {
-            LocalPosition = new Vector3(0f, 0f, 0f);
+            get
+            {
+                MatrixFloat matrix = MatrixFloat.Identity(4);
+                return matrix;
+            }
         }
+        
+        public MatrixFloat LocalRotationYMatrix
+        {
+            get
+            {
+                MatrixFloat matrix = MatrixFloat.Identity(4);
+                return matrix;
+            }
+        }
+        
+        public MatrixFloat LocalRotationZMatrix
+        {
+            get
+            {
+                MatrixFloat matrix = MatrixFloat.Identity(4);
+                return matrix;
+            }
+        }
+        
+        public MatrixFloat LocalRotationMatrix
+        {
+            get
+            {
+                MatrixFloat matrix = MatrixFloat.Identity(4);
+                return matrix;
+            }
+        }
+        #endregion
     }
 }
