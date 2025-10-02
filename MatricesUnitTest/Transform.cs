@@ -26,47 +26,47 @@ namespace Maths_Matrices.Tests
             get
             {
                 if (_parentTransform != null)
-                {
-                    return _parentTransform.WorldPosition + (LocalPosition * WorldScale);
-                }
+                    return _parentTransform.WorldPosition + Vector3.MultiplyAxis(LocalPosition, WorldScale);
+                
                 return LocalPosition;
             }
             set
             {
                 if (_parentTransform != null)
                 {
+                    LocalPosition = value - Vector3.DivideAxis(_parentTransform.WorldPosition, WorldScale);
                     return;
                 }
+                
                 LocalPosition = value;
             }
         }
 
-        public Vector3 WorldRotation
+        private Vector3 WorldRotation
         {
             get
             {
                 if (_parentTransform != null)
                 {
-                    return _parentTransform.LocalRotation + LocalRotation;
+                    return _parentTransform.WorldRotation + LocalRotation;
                 }
                 return LocalRotation;
             }
         }
         
-        public Vector3 WorldScale
+        private Vector3 WorldScale
         {
             get
             {
                 if (_parentTransform != null)
                 {
-                    return LocalScale * _parentTransform.LocalScale;
+                    return Vector3.MultiplyAxis(_parentTransform.WorldScale, LocalScale);
                 }
                 return LocalScale;
             }
         }
 
         #endregion
-
         
         #region TranslationMatrices
 
@@ -170,7 +170,7 @@ namespace Maths_Matrices.Tests
                 if (_parentTransform == null)
                     return LocalRotationMatrix;
 
-                return WorldRotationXMatrix * WorldRotationYMatrix * WorldlRotationZMatrix;
+                return WorldRotationXMatrix * WorldRotationYMatrix * WorldRotationZMatrix;
             }
         }
         private MatrixFloat WorldRotationXMatrix
@@ -205,7 +205,7 @@ namespace Maths_Matrices.Tests
             }
         }
 
-        private MatrixFloat WorldlRotationZMatrix
+        private MatrixFloat WorldRotationZMatrix
         {
             get
             {

@@ -28,6 +28,7 @@
       &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests19_TransformLocalScale&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests20_TransformLocalEverything.TestChangeEverythingEverywhereAllAtOnce&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests21_TransformSetParentAndCheckWorldPosition&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205::.NETFramework,Version=v4.8::Maths_Matrices.Tests.Tests22_TransformChangeWorldPosition&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;ProjectFile&gt;56D4D9CA-051F-4FC3-ADA3-DFA4C17AF205/f:Tests18_TransformLocalRotations.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
