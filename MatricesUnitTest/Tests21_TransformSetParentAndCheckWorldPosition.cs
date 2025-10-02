@@ -47,18 +47,18 @@ namespace Maths_Matrices.Tests
         public void TestDoubleParentChangePosition()
         {
             GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
-
+        
             //tRoot (10,5,2)
             //  -> tParent (1,4,42) => (11,9,44)
             //      -> tChild (1,2,3) => (12,11,47)
             
             Transform tRoot = new Transform();
             tRoot.LocalPosition = new Vector3(10f, 5f, 2f);
-
+        
             Transform tParent = new Transform();
             tParent.LocalPosition = new Vector3(1f, 4f, 42f);
             tParent.SetParent(tRoot);
-
+        
             Transform tChild = new Transform();
             tChild.LocalPosition = new Vector3(-1f, 2f, 3f);
             tChild.SetParent(tParent);
@@ -91,7 +91,7 @@ namespace Maths_Matrices.Tests
             
             GlobalSettings.DefaultFloatingPointTolerance = 0.0d;
         }
-
+        
         [Test]
         public void TestParentChangePositionAndRotation()
         {
@@ -100,7 +100,7 @@ namespace Maths_Matrices.Tests
             Transform tParent = new Transform();
             tParent.LocalPosition = new Vector3(10f, 5f, 2f);
             tParent.LocalRotation = new Vector3(0f, 0f, 45f);
-
+        
             Transform tChild = new Transform();
             tChild.LocalPosition = new Vector3(1f, 0f, 0f);
             tChild.SetParent(tParent);
@@ -112,7 +112,7 @@ namespace Maths_Matrices.Tests
                 { 0.000f, 0.000f, 1.000f, 2.000f },
                 { 0.000f, 0.000f, 0.000f, 1.000f },
             }, tChild.LocalToWorldMatrix.ToArray2D());
-
+        
             Assert.AreEqual(10.707f, tChild.WorldPosition.x);
             Assert.AreEqual(5.707f, tChild.WorldPosition.y);
             Assert.AreEqual(2f, tChild.WorldPosition.z);
@@ -128,7 +128,7 @@ namespace Maths_Matrices.Tests
             Transform tParent = new Transform();
             tParent.LocalPosition = new Vector3(100f, 0f, -20f);
             tParent.LocalScale = new Vector3(2f, 4f, 6f);
-
+        
             Transform tChild = new Transform();
             tChild.LocalPosition = new Vector3(1f, 1f, 1f);
             tChild.SetParent(tParent);
@@ -140,7 +140,7 @@ namespace Maths_Matrices.Tests
                 { 0f, 0f, 6f, -14f },
                 { 0f, 0f, 0f, 1f },
             }, tChild.LocalToWorldMatrix.ToArray2D());
-
+        
             Assert.AreEqual(102f, tChild.WorldPosition.x);
             Assert.AreEqual(4f, tChild.WorldPosition.y);
             Assert.AreEqual(-14f, tChild.WorldPosition.z);
