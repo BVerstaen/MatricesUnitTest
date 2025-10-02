@@ -26,7 +26,7 @@ namespace Maths_Matrices.Tests
             get
             {
                 if (_parentTransform != null)
-                    return _parentTransform.WorldPosition + Vector3.MultiplyAxis(LocalPosition, WorldScale);
+                    return Vector3.MultiplyPoint(_parentTransform.LocalToWorldMatrix, LocalPosition);
                 
                 return LocalPosition;
             }
@@ -34,14 +34,14 @@ namespace Maths_Matrices.Tests
             {
                 if (_parentTransform != null)
                 {
-                    LocalPosition = value - Vector3.DivideAxis(_parentTransform.WorldPosition, WorldScale);
+                    LocalPosition = Vector3.MultiplyPoint(_parentTransform.WorldToLocalMatrix, value);
                     return;
                 }
                 
                 LocalPosition = value;
             }
         }
-
+        
         private Vector3 WorldRotation
         {
             get
@@ -103,7 +103,7 @@ namespace Maths_Matrices.Tests
 
         #endregion
         
-        #region RotationMatrices
+        #region LocalRotationMatrices
 
         private void CalculateTheta(float degree, out float cosTheta, out float sinTheta)
         {
@@ -162,7 +162,10 @@ namespace Maths_Matrices.Tests
         }
 
         public MatrixFloat LocalRotationMatrix => LocalRotationYMatrix * LocalRotationXMatrix * LocalRotationZMatrix;
+        
+        #endregion
 
+        #region WorldRotationMatrices
         public MatrixFloat WorldRotationMatrix
         {
             get
@@ -221,10 +224,8 @@ namespace Maths_Matrices.Tests
                 return matrix;
             }
         }
-
-        
         #endregion
-
+        
         #region ScaleMatrices
         public MatrixFloat LocalScaleMatrix
         {
@@ -254,10 +255,9 @@ namespace Maths_Matrices.Tests
             }
         }
         #endregion
-
-
+        
         public MatrixFloat LocalToWorldMatrix => WorldTranslationMatrix * WorldRotationMatrix * WorldScaleMatrix;
-        public MatrixFloat WorldToLocalMatrix => MatrixFloat.InvertByDeterminant(LocalToWorldMatrix);
+        public MatrixFloat WorldToLocalMatrix => MatrixFloat.InvertByRowReduction(LocalToWorldMatrix);
 
         public void SetParent(Transform tParent)
         {
