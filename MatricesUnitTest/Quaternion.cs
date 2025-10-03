@@ -46,8 +46,6 @@ namespace Maths_Matrices.Tests
         }
         
         public Quaternion conjugated => new Quaternion(-x, -y, -z, w);
-
-        
         
         public MatrixFloat Matrix
         {

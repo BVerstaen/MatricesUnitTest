@@ -186,11 +186,7 @@ namespace Maths_Matrices.Tests
             return newMatrix;
         }
         
-        public static MatrixInt Multiply(MatrixInt m1, MatrixInt m2)
-        {
-            return m1.Multiply(m2);
-        }
-        
+        public static MatrixInt Multiply(MatrixInt m1, MatrixInt m2) => m1.Multiply(m2);
         public static MatrixInt operator *(MatrixInt m1, MatrixInt m2) => MatrixInt.Multiply(m1, m2);
         #endregion
 
