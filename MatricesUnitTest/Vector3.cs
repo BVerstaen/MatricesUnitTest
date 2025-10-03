@@ -36,5 +36,9 @@ namespace Maths_Matrices.Tests
             float z = m[2,0]*v.x + m[2,1]*v.y + m[2,2]*v.z + m[2,3];
             return new Vector3(x, y, z);
         }
+        public static Vector3 operator *(Quaternion q, Vector3 b)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
