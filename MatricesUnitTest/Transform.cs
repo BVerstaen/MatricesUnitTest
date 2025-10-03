@@ -4,8 +4,6 @@ namespace Maths_Matrices.Tests
 {
     public class Transform
     {
-        private const float Deg2Rad = (float)(Math.PI / 180f);
-
         public Vector3 LocalPosition;
         public Vector3 LocalRotation;
         public Vector3 LocalScale;
@@ -107,7 +105,7 @@ namespace Maths_Matrices.Tests
 
         private void CalculateTheta(float degree, out float cosTheta, out float sinTheta)
         {
-            float radians = degree * Deg2Rad;
+            float radians = degree * MathUtils.Deg2Rad;
             cosTheta = (float)Math.Cos(radians);
             sinTheta = (float)Math.Sin(radians);
         }
@@ -262,6 +260,12 @@ namespace Maths_Matrices.Tests
         public void SetParent(Transform tParent)
         {
             _parentTransform = tParent;
+        }
+        
+        public Quaternion LocalRotationQuaternion
+        {
+            get => Quaternion.Euler(LocalRotation);
+            set => LocalRotation = value.EulerAngles;
         }
     }
 }

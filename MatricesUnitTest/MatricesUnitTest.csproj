@@ -43,6 +43,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="MathUtils.cs" />
         <Compile Include="MatrixElementaryOperations.cs" />
         <Compile Include="MatrixExceptions.cs" />
         <Compile Include="MatrixFloat.cs" />
@@ -78,6 +79,9 @@
         <Compile Include="Tests25_QuaternionsMultiplication.cs" />
         <Compile Include="Tests26_QuaternionsPointRotation.cs" />
         <Compile Include="Tests27_QuaternionsMatrix.cs" />
+        <Compile Include="Tests28_QuaternionsEulerConversions.cs" />
+        <Compile Include="Tests29_TransformGetLocalRotationAsQuaternion.cs" />
+        <Compile Include="Tests30_TransformSetLocalRotationAsQuaternion.cs" />
         <Compile Include="Transform.cs" />
         <Compile Include="Vector3.cs" />
         <Compile Include="Vector4.cs" />
