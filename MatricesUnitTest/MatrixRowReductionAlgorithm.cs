@@ -23,7 +23,7 @@ namespace Maths_Matrices.Tests
                     }
                 }
                 //Check non-null
-                if (Math.Abs(highestNumber) <= 1e-6f)
+                if (Math.Abs(highestNumber) <= 0.0f)
                 {
                     if (isInverting)
                         throw new MatrixInvertException("Matrix can't be inverted");

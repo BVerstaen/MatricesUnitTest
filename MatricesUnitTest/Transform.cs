@@ -257,10 +257,7 @@ namespace Maths_Matrices.Tests
         public MatrixFloat LocalToWorldMatrix => WorldTranslationMatrix * WorldRotationMatrix * WorldScaleMatrix;
         public MatrixFloat WorldToLocalMatrix => MatrixFloat.InvertByRowReduction(LocalToWorldMatrix);
 
-        public void SetParent(Transform tParent)
-        {
-            _parentTransform = tParent;
-        }
+        public void SetParent(Transform tParent) => _parentTransform = tParent; 
         
         public Quaternion LocalRotationQuaternion
         {

@@ -53,7 +53,7 @@ namespace Maths_Matrices.Tests
         {
             get
             {
-                float length = (float)Math.Sqrt(x*x + y*y + z*z);
+                float length = (float)Math.Sqrt(Math.Pow(x,2) + Math.Pow(y,2) + Math.Pow(z,2));
                 return new Vector3(x/length, y/length, z/length);
             }
         }
